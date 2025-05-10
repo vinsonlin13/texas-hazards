@@ -12,6 +12,7 @@ import {
 } from 'recharts';
 import * as d3 from 'd3';
 
+// Render bar chart that allows users to select counties
 const SelectedBarChart = ({ data, selected, colorBy, setSelected, hoveredCounty, clickedCounty, onCountyHover }) => {
   const selectedData = data
     .filter(d => selected.includes(d.COUNTY?.toUpperCase()))
@@ -21,17 +22,19 @@ const SelectedBarChart = ({ data, selected, colorBy, setSelected, hoveredCounty,
     }))
     .sort((a, b) => b.value - a.value);
 
+  // Color scale for the bars
   const colorScale = d3.scaleSequential()
     .domain([0, 100])
     .interpolator(d3.interpolateBlues);
 
+  // Handle bar click to remove county from selection
   const handleBarClick = (countyName) => {
     const upper = countyName.toUpperCase();
     setSelected(prev => prev.filter(name => name !== upper));
   };
 
+  // Handle clear all button click and add county to selection
   const handleClearAll = () => setSelected([]);
-
   const handleAddCounty = (name) => {
     const upper = name.toUpperCase();
     const exists = data.some(d => d.COUNTY?.toUpperCase() === upper);
@@ -40,6 +43,7 @@ const SelectedBarChart = ({ data, selected, colorBy, setSelected, hoveredCounty,
     }
   };
 
+  // Handle keydown event for adding county
   useEffect(() => {
     if (clickedCounty && !selected.includes(clickedCounty)) {
       const exists = data.some(d => d.COUNTY?.toUpperCase() === clickedCounty);
@@ -49,6 +53,7 @@ const SelectedBarChart = ({ data, selected, colorBy, setSelected, hoveredCounty,
     }
   }, [clickedCounty]);
 
+  // Handle mouse leave event to reset hovered county
   return (
     <div style={{
       width: '500px',

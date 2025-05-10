@@ -9,6 +9,7 @@ import {
   LinearScale
 } from 'chart.js';
 
+// Register the necessary components
 ChartJS.register(
   Tooltip,
   Title,
@@ -17,11 +18,13 @@ ChartJS.register(
   LinearScale
 );
 
+// Define the ScatterPlot component
 const ScatterPlot = ({ data, colorBy, hoveredCounty, onCountyHover, onCountyClick }) => {
   const filtered = data.filter(
     d => !isNaN(d.RISK_SCORE) && !isNaN(d.RESL_SCORE)
   );
 
+  // Sort the data by RISK_SCORE and RESL_SCORE
   const chartData = {
     datasets: [
       {
@@ -45,6 +48,7 @@ const ScatterPlot = ({ data, colorBy, hoveredCounty, onCountyHover, onCountyClic
     ]
   };
 
+  // Define the chart options
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -78,8 +82,8 @@ const ScatterPlot = ({ data, colorBy, hoveredCounty, onCountyHover, onCountyClic
       legend: { display: false },
       title: {
         display: true,
-        text: 'Risk vs. Resilience Score (Texas Counties)',
-        font: { size: 18 }
+        text: 'Texas Counties Risk vs. Resilience Score Scatter Plot',
+        font: { size: 24, weight: 'bold' },
       }
     },
     scales: {
@@ -88,6 +92,7 @@ const ScatterPlot = ({ data, colorBy, hoveredCounty, onCountyHover, onCountyClic
     }
   };
 
+  // Render the scatter plot
   return (
     <div style={{
       width: '100%',

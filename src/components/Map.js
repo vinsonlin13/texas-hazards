@@ -9,12 +9,14 @@ import * as d3 from 'd3';
 
 const geoUrl = '/data/counties-10m.json';
 
+// Map component
 const Map = ({ data, colorBy = 'RISK_SCORE', onCountyHover, hoveredCounty, onCountyClick }) => {
   const [geographies, setGeographies] = useState([]);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [tooltipColor, setTooltipColor] = useState('rgba(0, 102, 204, 0.6)');
   const [tooltipTextColor, setTooltipTextColor] = useState('#000000');
 
+  // Normalize function to scale values between 0 and 100
   const normalize = (value, min, max) => {
     if (value <= 0) return 0;
     const logMin = Math.log(min);
@@ -23,6 +25,7 @@ const Map = ({ data, colorBy = 'RISK_SCORE', onCountyHover, hoveredCounty, onCou
     return ((logVal - logMin) / (logMax - logMin)) * 100;
   };
 
+  // Fetch geographies data
   useEffect(() => {
     fetch(geoUrl)
       .then(res => res.json())
@@ -33,6 +36,7 @@ const Map = ({ data, colorBy = 'RISK_SCORE', onCountyHover, hoveredCounty, onCou
       });
   }, []);
 
+  // Create a value map for the counties
   const valueMap = {};
   let popMin = Infinity, popMax = -Infinity;
 
@@ -45,6 +49,7 @@ const Map = ({ data, colorBy = 'RISK_SCORE', onCountyHover, hoveredCounty, onCou
     });
   }
 
+  // Populate map with normalized values
   data.forEach(d => {
     const county = d.COUNTY?.toUpperCase();
     if (colorBy === 'POPULATION') {
@@ -54,10 +59,12 @@ const Map = ({ data, colorBy = 'RISK_SCORE', onCountyHover, hoveredCounty, onCou
     }
   });
 
+  // Create a color scale
   const colorScale = d3.scaleSequential()
     .domain([0, 100])
     .interpolator(d3.interpolateBlues);
 
+  // Calculate luminance for text color
   const calculateLuminance = (color) => {
     const d3Color = d3.color(color);
     if (!d3Color) return 0;
@@ -72,6 +79,7 @@ const Map = ({ data, colorBy = 'RISK_SCORE', onCountyHover, hoveredCounty, onCou
     setCursorPosition({ x: event.clientX + 10, y: event.clientY + 10 });
   };
 
+  // Tooltip data
   const hoveredData = data.find(d => d.COUNTY?.toUpperCase() === hoveredCounty);
   const roundedValue = hoveredData
     ? (colorBy === 'POPULATION'
@@ -81,6 +89,7 @@ const Map = ({ data, colorBy = 'RISK_SCORE', onCountyHover, hoveredCounty, onCou
     : null;
   const textColor = calculateLuminance(tooltipColor) < 0.5 ? '#FFFFFF' : '#000000';
 
+  // Set default tooltip color and text color
   return (
     <div style={{ maxWidth: '1000px', margin: 'auto', display: 'flex', justifyContent: 'space-between' }}>
       <div
@@ -96,7 +105,7 @@ const Map = ({ data, colorBy = 'RISK_SCORE', onCountyHover, hoveredCounty, onCou
           fontWeight: 'bold',
           textDecoration: 'underline'
         }}>
-          Texas Counties Heatmap ({colorBy})
+          Texas Counties ({colorBy}) Heatmap
         </h2>
 
         <div style={{ flex: 1, paddingRight: '20px' }}>

@@ -19,7 +19,7 @@ const AllCountyBarChart = ({ data, hoveredCounty, onCountyHover }) => {
   return (
     <div style={{ marginTop: '40px', marginBottom: '40px' }}>
       <h2 style={{ textAlign: 'center', fontWeight: 'bold', textDecoration: 'underline' }}>
-        All Texas Counties by Risk Score (Ascending)
+        All Texas Counties Sorted by Risk Score (Ascending) Bar Chart
       </h2>
       <ResponsiveContainer width="100%" height={600}>
         <BarChart
@@ -33,7 +33,7 @@ const AllCountyBarChart = ({ data, hoveredCounty, onCountyHover }) => {
             tick={false}
             axisLine={false}
           >
-            <Label value="Counties (sorted)" offset={-5} position="insideBottom" />
+            <Label value="Counties" offset={-5} position="insideBottom" />
           </XAxis>
           <YAxis domain={[0, 100]}>
             <Label value="Risk Score" angle={-90} position="insideLeft" />

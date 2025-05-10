@@ -1,3 +1,4 @@
+// Project: Texas County Risk Assessment
 import { useEffect, useState } from 'react';
 import { loadCSV } from '../utils/parseCSV';
 import Map from '../components/Map';
@@ -6,7 +7,9 @@ import AllCountyBarChart from '../components/AllCountyBarChart';
 import SelectedBarChart from '../components/SelectedBarChart';
 import ScatterPlot from '../components/ScatterPlot';
 
+// Use utility function to load CSV data
 export default function HomePage() {
+  // State variables
   const [data, setData] = useState([]);
   const [hoveredCounty, setHoveredCounty] = useState(null);
   const [clickedCounty, setClickedCounty] = useState(null); // NEW
@@ -14,16 +17,16 @@ export default function HomePage() {
   const [colorBy, setColorBy] = useState('RISK_SCORE');
   const [viewMode, setViewMode] = useState('all');
 
+  // Load CSV data on component mount
   useEffect(() => {
     loadCSV().then(setData).catch(console.error);
   }, []);
 
+  // Handle county click for SelectedBarChart
   const handleCountyClick = (countyName) => {
     const upper = countyName?.toUpperCase();
     if (!upper) return;
-  
-    setClickedCounty(upper); // Always track for SelectedBarChart
-  
+    setClickedCounty(upper);
     if (viewMode === 'interactive') {
       setSelectedCounties(prev => {
         const updated = [...new Set([upper, ...prev])];
@@ -34,6 +37,7 @@ export default function HomePage() {
 
   if (data.length === 0) return <div>Loading...</div>;
 
+  // Filter data based on selected counties
   return (
     <div>
       <div style={{
