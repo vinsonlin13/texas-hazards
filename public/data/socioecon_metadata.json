@@ -1,0 +1,749 @@
+{
+  "Social Factors": {
+    "Total households": {
+      "DP02_0152E": "Total households",
+      "With a computer": {
+        "DP02_0153E": "With a computer"
+      },
+      "With a broadband Internet subscription": {
+        "DP02_0154E": "With a broadband Internet subscription"
+      }
+    },
+    "Population in households": {
+      "DP02_0018E": "Population in households",
+      "Householder": {
+        "DP02_0019E": "Householder"
+      },
+      "Spouse": {
+        "DP02_0020E": "Spouse"
+      },
+      "Unmarried partner": {
+        "DP02_0021E": "Unmarried partner"
+      },
+      "Child": {
+        "DP02_0022E": "Child"
+      },
+      "Other relatives": {
+        "DP02_0023E": "Other relatives"
+      },
+      "Other nonrelatives": {
+        "DP02_0024E": "Other nonrelatives"
+      }
+    },
+    "Males 15 years and over": {
+      "DP02_0025E": "Males 15 years and over",
+      "Never married": {
+        "DP02_0026E": "Never married"
+      },
+      "Now married, except separated": {
+        "DP02_0027E": "Now married, except separated"
+      },
+      "Separated": {
+        "DP02_0028E": "Separated"
+      },
+      "Widowed": {
+        "DP02_0029E": "Widowed"
+      },
+      "Divorced": {
+        "DP02_0030E": "Divorced"
+      }
+    },
+    "Females 15 years and over": {
+      "DP02_0031E": "Females 15 years and over",
+      "Never married": {
+        "DP02_0032E": "Never married"
+      },
+      "Now married, except separated": {
+        "DP02_0033E": "Now married, except separated"
+      },
+      "Separated": {
+        "DP02_0034E": "Separated"
+      },
+      "Widowed": {
+        "DP02_0035E": "Widowed"
+      },
+      "Divorced": {
+        "DP02_0036E": "Divorced"
+      }
+    },
+    "Number of women 15 to 50 years old who had a birth in the past 12 months": {
+      "DP02_0037E": "Number of women 15 to 50 years old who had a birth in the past 12 months",
+      "Unmarried women (widowed, divorced, and never married)": {
+        "DP02_0038E": "Unmarried women (widowed, divorced, and never married)",
+        "Per 1,000 unmarried women": {
+          "DP02_0039E": "Per 1,000 unmarried women"
+        }
+      },
+      "Per 1,000 women 15 to 50 years old": {
+        "DP02_0040E": "Per 1,000 women 15 to 50 years old"
+      },
+      "Per 1,000 women 15 to 19 years old": {
+        "DP02_0041E": "Per 1,000 women 15 to 19 years old"
+      },
+      "Per 1,000 women 20 to 34 years old": {
+        "DP02_0042E": "Per 1,000 women 20 to 34 years old"
+      },
+      "Per 1,000 women 35 to 50 years old": {
+        "DP02_0043E": "Per 1,000 women 35 to 50 years old"
+      }
+    },
+    "Number of grandparents living with own grandchildren under 18 years": {
+      "DP02_0044E": "Number of grandparents living with own grandchildren under 18 years",
+      "Grandparents responsible for grandchildren": {
+        "DP02_0045E": "Grandparents responsible for grandchildren"
+      },
+      "Years responsible for grandchildren": {
+        "Less than 1 year": {
+          "DP02_0046E": "Less than 1 year"
+        },
+        "1 or 2 years": {
+          "DP02_0047E": "1 or 2 years"
+        },
+        "3 or 4 years": {
+          "DP02_0048E": "3 or 4 years"
+        },
+        "5 or more years": {
+          "DP02_0049E": "5 or more years"
+        }
+      }
+    },
+    "Number of grandparents responsible for own grandchildren under 18 years": {
+      "DP02_0050E": "Number of grandparents responsible for own grandchildren under 18 years",
+      "Who are female": {
+        "DP02_0051E": "Who are female"
+      },
+      "Who are married": {
+        "DP02_0052E": "Who are married"
+      }
+    },
+    "Population 3 years and over enrolled in school": {
+      "DP02_0053E": "Population 3 years and over enrolled in school",
+      "Nursery school, preschool": {
+        "DP02_0054E": "Nursery school, preschool"
+      },
+      "Kindergarten": {
+        "DP02_0055E": "Kindergarten"
+      },
+      "Elementary school (grades 1-8)": {
+        "DP02_0056E": "Elementary school (grades 1-8)"
+      },
+      "High school (grades 9-12)": {
+        "DP02_0057E": "High school (grades 9-12)"
+      },
+      "College or graduate school": {
+        "DP02_0058E": "College or graduate school"
+      }
+    },
+    "Population 25 years and over": {
+      "DP02_0059E": "Population 25 years and over",
+      "Less than 9th grade": {
+        "DP02_0060E": "Less than 9th grade"
+      },
+      "9th to 12th grade, no diploma": {
+        "DP02_0061E": "9th to 12th grade, no diploma"
+      },
+      "High school graduate (includes equivalency)": {
+        "DP02_0062E": "High school graduate (includes equivalency)"
+      },
+      "Some college, no degree": {
+        "DP02_0063E": "Some college, no degree"
+      },
+      "Associate's degree": {
+        "DP02_0064E": "Associate's degree"
+      },
+      "Bachelor's degree": {
+        "DP02_0065E": "Bachelor's degree"
+      },
+      "Graduate or professional degree": {
+        "DP02_0066E": "Graduate or professional degree"
+      },
+      "High school graduate or higher": {
+        "DP02_0067E": "High school graduate or higher"
+      },
+      "Bachelor's degree or higher": {
+        "DP02_0068E": "Bachelor's degree or higher"
+      }
+    },
+    "Civilian population 18 years and over": {
+      "DP02_0069E": "Civilian population 18 years and over",
+      "Civilian veterans": {
+        "DP02_0070E": "Civilian veterans"
+      }
+    },
+    "Total Civilian Noninstitutionalized Population": {
+      "DP02_0071E": "Total Civilian Noninstitutionalized Population",
+      "With a disability": {
+        "DP02_0072E": "With a disability"
+      }
+    },
+    "Under 18 years": {
+      "DP02_0073E": "Under 18 years",
+      "With a disability": {
+        "DP02_0074E": "With a disability"
+      }
+    },
+    "18 to 64 years": {
+      "DP02_0075E": "18 to 64 years",
+      "With a disability": {
+        "DP02_0076E": "With a disability"
+      }
+    },
+    "65 years and over": {
+      "DP02_0077E": "65 years and over",
+      "With a disability": {
+        "DP02_0078E": "With a disability"
+      }
+    },
+    "Population 1 year and over": {
+      "DP02_0079E": "Population 1 year and over",
+      "Same house": {
+        "DP02_0080E": "Same house"
+      },
+      "Different house (in the U.S. or abroad)": {
+        "DP02_0081E": "Different house (in the U.S. or abroad)",
+        "Different house in the U.S.": {
+          "DP02_0082E": "Different house in the U.S.",
+          "Same county": {
+            "DP02_0083E": "Same county"
+          },
+          "Different county": {
+            "DP02_0084E": "Different county",
+            "Same state": {
+              "DP02_0085E": "Same state"
+            },
+            "Different state": {
+              "DP02_0086E": "Different state"
+            }
+          }
+        },
+        "Abroad": {
+          "DP02_0087E": "Abroad"
+        }
+      }
+    },
+    "Total population": {
+      "DP02_0124E": "Total population",
+      "American": {
+        "DP02_0125E": "American"
+      },
+      "Arab": {
+        "DP02_0126E": "Arab"
+      },
+      "Czech": {
+        "DP02_0127E": "Czech"
+      },
+      "Danish": {
+        "DP02_0128E": "Danish"
+      },
+      "Dutch": {
+        "DP02_0129E": "Dutch"
+      },
+      "English": {
+        "DP02_0130E": "English"
+      },
+      "French (except Basque)": {
+        "DP02_0131E": "French (except Basque)"
+      },
+      "French Canadian": {
+        "DP02_0132E": "French Canadian"
+      },
+      "German": {
+        "DP02_0133E": "German"
+      },
+      "Greek": {
+        "DP02_0134E": "Greek"
+      },
+      "Hungarian": {
+        "DP02_0135E": "Hungarian"
+      },
+      "Irish": {
+        "DP02_0136E": "Irish"
+      },
+      "Italian": {
+        "DP02_0137E": "Italian"
+      },
+      "Lithuanian": {
+        "DP02_0138E": "Lithuanian"
+      },
+      "Norwegian": {
+        "DP02_0139E": "Norwegian"
+      },
+      "Polish": {
+        "DP02_0140E": "Polish"
+      },
+      "Portuguese": {
+        "DP02_0141E": "Portuguese"
+      },
+      "Russian": {
+        "DP02_0142E": "Russian"
+      },
+      "Scotch-Irish": {
+        "DP02_0143E": "Scotch-Irish"
+      },
+      "Scottish": {
+        "DP02_0144E": "Scottish"
+      },
+      "Slovak": {
+        "DP02_0145E": "Slovak"
+      },
+      "Subsaharan African": {
+        "DP02_0146E": "Subsaharan African"
+      },
+      "Swedish": {
+        "DP02_0147E": "Swedish"
+      },
+      "Swiss": {
+        "DP02_0148E": "Swiss"
+      },
+      "Ukrainian": {
+        "DP02_0149E": "Ukrainian"
+      },
+      "Welsh": {
+        "DP02_0150E": "Welsh"
+      },
+      "West Indian (excluding Hispanic origin groups)": {
+        "DP02_0151E": "West Indian (excluding Hispanic origin groups)"
+      }
+    },
+    "Foreign-born population": {
+      "DP02_0095E": "Foreign-born population",
+      "Naturalized U.S. citizen": {
+        "DP02_0096E": "Naturalized U.S. citizen"
+      },
+      "Not a U.S. citizen": {
+        "DP02_0097E": "Not a U.S. citizen"
+      }
+    },
+    "Population born outside the United States": {
+      "DP02_0098E": "Population born outside the United States",
+      "Native": {
+        "DP02_0099E": "Native",
+        "Entered 2010 or later": {
+          "DP02_0100E": "Entered 2010 or later"
+        },
+        "Entered before 2010": {
+          "DP02_0101E": "Entered before 2010"
+        }
+      },
+      "Foreign-born": {
+        "DP02_0102E": "Foreign-born",
+        "Entered 2010 or later": {
+          "DP02_0103E": "Entered 2010 or later"
+        },
+        "Entered before 2010": {
+          "DP02_0104E": "Entered before 2010"
+        }
+      }
+    },
+    "Foreign-born population, excluding population born at sea": {
+      "DP02_0105E": "Foreign-born population, excluding population born at sea",
+      "Europe": {
+        "DP02_0106E": "Europe"
+      },
+      "Asia": {
+        "DP02_0107E": "Asia"
+      },
+      "Africa": {
+        "DP02_0108E": "Africa"
+      },
+      "Oceania": {
+        "DP02_0109E": "Oceania"
+      },
+      "Latin America": {
+        "DP02_0110E": "Latin America"
+      },
+      "Northern America": {
+        "DP02_0111E": "Northern America"
+      }
+    },
+    "Population 5 years and over": {
+      "DP02_0112E": "Population 5 years and over",
+      "English only": {
+        "DP02_0113E": "English only"
+      },
+      "Language other than English": {
+        "DP02_0114E": "Language other than English",
+        "Speak English less than very well\"\"": {
+          "DP02_0115E": "Speak English less than very well\"\""
+        }
+      },
+      "Spanish": {
+        "DP02_0116E": "Spanish",
+        "Speak English less than very well\"\"": {
+          "DP02_0117E": "Speak English less than very well\"\""
+        }
+      },
+      "Other Indo-European languages": {
+        "DP02_0118E": "Other Indo-European languages",
+        "Speak English less than very well\"\"": {
+          "DP02_0119E": "Speak English less than very well\"\""
+        }
+      },
+      "Asian and Pacific Islander languages": {
+        "DP02_0120E": "Asian and Pacific Islander languages",
+        "Speak English less than very well\"\"": {
+          "DP02_0121E": "Speak English less than very well\"\""
+        }
+      },
+      "Other languages": {
+        "DP02_0122E": "Other languages",
+        "Speak English less than very well\"\"": {
+          "DP02_0123E": "Speak English less than very well\"\""
+        }
+      }
+    }
+  },
+  "Economic factors": {
+    "Population 16 years and over": {
+      "DP03_0001E": "Population 16 years and over",
+      "In labor force": {
+        "DP03_0002E": "In labor force",
+        "Civilian labor force": {
+          "DP03_0003E": "Civilian labor force",
+          "Employed": {
+            "DP03_0004E": "Employed"
+          },
+          "Unemployed": {
+            "DP03_0005E": "Unemployed"
+          }
+        },
+        "Armed Forces": {
+          "DP03_0006E": "Armed Forces"
+        }
+      },
+      "Not in labor force": {
+        "DP03_0007E": "Not in labor force"
+      }
+    },
+    "Civilian labor force": {
+      "DP03_0008E": "Civilian labor force",
+      "Unemployment Rate": {
+        "DP03_0009E": "Unemployment Rate"
+      }
+    },
+    "Females 16 years and over": {
+      "DP03_0010E": "Females 16 years and over",
+      "In labor force": {
+        "DP03_0011E": "In labor force",
+        "Civilian labor force": {
+          "DP03_0012E": "Civilian labor force",
+          "Employed": {
+            "DP03_0013E": "Employed"
+          }
+        }
+      }
+    },
+    "Own children of the householder under 6 years": {
+      "DP03_0014E": "Own children of the householder under 6 years",
+      "All parents in family in labor force": {
+        "DP03_0015E": "All parents in family in labor force"
+      }
+    },
+    "Own children of the householder 6 to 17 years": {
+      "DP03_0016E": "Own children of the householder 6 to 17 years",
+      "All parents in family in labor force": {
+        "DP03_0017E": "All parents in family in labor force"
+      }
+    },
+    "Workers 16 years and over": {
+      "DP03_0018E": "Workers 16 years and over",
+      "Car, truck, or van -- drove alone": {
+        "DP03_0019E": "Car, truck, or van -- drove alone"
+      },
+      "Car, truck, or van -- carpooled": {
+        "DP03_0020E": "Car, truck, or van -- carpooled"
+      },
+      "Public transportation (excluding taxicab)": {
+        "DP03_0021E": "Public transportation (excluding taxicab)"
+      },
+      "Walked": {
+        "DP03_0022E": "Walked"
+      },
+      "Other means": {
+        "DP03_0023E": "Other means"
+      },
+      "Worked from home": {
+        "DP03_0024E": "Worked from home"
+      },
+      "Mean travel time to work (minutes)": {
+        "DP03_0025E": "Mean travel time to work (minutes)"
+      }
+    },
+    "Civilian employed population 16 years and over": {
+      "DP03_0046E": "Civilian employed population 16 years and over",
+      "Private wage and salary workers": {
+        "DP03_0047E": "Private wage and salary workers"
+      },
+      "Government workers": {
+        "DP03_0048E": "Government workers"
+      },
+      "Self-employed in own not incorporated business workers": {
+        "DP03_0049E": "Self-employed in own not incorporated business workers"
+      },
+      "Unpaid family workers": {
+        "DP03_0050E": "Unpaid family workers"
+      }
+    },
+    "Total households": {
+      "DP03_0051E": "Total households",
+      "Less than $10,000": {
+        "DP03_0052E": "Less than $10,000"
+      },
+      "$10,000 to $14,999": {
+        "DP03_0053E": "$10,000 to $14,999"
+      },
+      "$15,000 to $24,999": {
+        "DP03_0054E": "$15,000 to $24,999"
+      },
+      "$25,000 to $34,999": {
+        "DP03_0055E": "$25,000 to $34,999"
+      },
+      "$35,000 to $49,999": {
+        "DP03_0056E": "$35,000 to $49,999"
+      },
+      "$50,000 to $74,999": {
+        "DP03_0057E": "$50,000 to $74,999"
+      },
+      "$75,000 to $99,999": {
+        "DP03_0058E": "$75,000 to $99,999"
+      },
+      "$100,000 to $149,999": {
+        "DP03_0059E": "$100,000 to $149,999"
+      },
+      "$150,000 to $199,999": {
+        "DP03_0060E": "$150,000 to $199,999"
+      },
+      "$200,000 or more": {
+        "DP03_0061E": "$200,000 or more"
+      },
+      "Median household income (dollars)": {
+        "DP03_0062E": "Median household income (dollars)"
+      },
+      "Mean household income (dollars)": {
+        "DP03_0063E": "Mean household income (dollars)"
+      },
+      "With earnings": {
+        "DP03_0064E": "With earnings",
+        "Mean earnings (dollars)": {
+          "DP03_0065E": "Mean earnings (dollars)"
+        }
+      },
+      "With Social Security": {
+        "DP03_0066E": "With Social Security",
+        "Mean Social Security income (dollars)": {
+          "DP03_0067E": "Mean Social Security income (dollars)"
+        }
+      },
+      "With retirement income": {
+        "DP03_0068E": "With retirement income",
+        "Mean retirement income (dollars)": {
+          "DP03_0069E": "Mean retirement income (dollars)"
+        }
+      },
+      "With Supplemental Security Income": {
+        "DP03_0070E": "With Supplemental Security Income",
+        "Mean Supplemental Security Income (dollars)": {
+          "DP03_0071E": "Mean Supplemental Security Income (dollars)"
+        }
+      },
+      "With cash public assistance income": {
+        "DP03_0072E": "With cash public assistance income",
+        "Mean cash public assistance income (dollars)": {
+          "DP03_0073E": "Mean cash public assistance income (dollars)"
+        }
+      },
+      "With Food Stamp/SNAP benefits in the past 12 months": {
+        "DP03_0074E": "With Food Stamp/SNAP benefits in the past 12 months"
+      }
+    },
+    "Families": {
+      "DP03_0075E": "Families",
+      "Less than $10,000": {
+        "DP03_0076E": "Less than $10,000"
+      },
+      "$10,000 to $14,999": {
+        "DP03_0077E": "$10,000 to $14,999"
+      },
+      "$15,000 to $24,999": {
+        "DP03_0078E": "$15,000 to $24,999"
+      },
+      "$25,000 to $34,999": {
+        "DP03_0079E": "$25,000 to $34,999"
+      },
+      "$35,000 to $49,999": {
+        "DP03_0080E": "$35,000 to $49,999"
+      },
+      "$50,000 to $74,999": {
+        "DP03_0081E": "$50,000 to $74,999"
+      },
+      "$75,000 to $99,999": {
+        "DP03_0082E": "$75,000 to $99,999"
+      },
+      "$100,000 to $149,999": {
+        "DP03_0083E": "$100,000 to $149,999"
+      },
+      "$150,000 to $199,999": {
+        "DP03_0084E": "$150,000 to $199,999"
+      },
+      "$200,000 or more": {
+        "DP03_0085E": "$200,000 or more"
+      },
+      "Median family income (dollars)": {
+        "DP03_0086E": "Median family income (dollars)"
+      },
+      "Mean family income (dollars)": {
+        "DP03_0087E": "Mean family income (dollars)"
+      }
+    },
+    "Per capita income (dollars)": {
+      "DP03_0088E": "Per capita income (dollars)"
+    },
+    "Nonfamily households": {
+      "DP03_0089E": "Nonfamily households",
+      "Median nonfamily income (dollars)": {
+        "DP03_0090E": "Median nonfamily income (dollars)"
+      },
+      "Mean nonfamily income (dollars)": {
+        "DP03_0091E": "Mean nonfamily income (dollars)"
+      }
+    },
+    "Median earnings for workers (dollars)": {
+      "DP03_0092E": "Median earnings for workers (dollars)"
+    },
+    "Median earnings for male full-time, year-round workers (dollars)": {
+      "DP03_0093E": "Median earnings for male full-time, year-round workers (dollars)"
+    },
+    "Median earnings for female full-time, year-round workers (dollars)": {
+      "DP03_0094E": "Median earnings for female full-time, year-round workers (dollars)"
+    },
+    "Civilian noninstitutionalized population": {
+      "DP03_0095E": "Civilian noninstitutionalized population",
+      "With health insurance coverage": {
+        "DP03_0096E": "With health insurance coverage",
+        "With private health insurance": {
+          "DP03_0097E": "With private health insurance"
+        },
+        "With public coverage": {
+          "DP03_0098E": "With public coverage"
+        }
+      },
+      "No health insurance coverage": {
+        "DP03_0099E": "No health insurance coverage"
+      }
+    },
+    "Civilian noninstitutionalized population under 19 years": {
+      "DP03_0100E": "Civilian noninstitutionalized population under 19 years",
+      "No health insurance coverage": {
+        "DP03_0101E": "No health insurance coverage"
+      }
+    },
+    "Civilian noninstitutionalized population 19 to 64 years": {
+      "DP03_0102E": "Civilian noninstitutionalized population 19 to 64 years",
+      "In labor force:": {
+        "DP03_0103E": "In labor force:",
+        "Employed:": {
+          "DP03_0104E": "Employed:",
+          "With health insurance coverage": {
+            "DP03_0105E": "With health insurance coverage",
+            "With private health insurance": {
+              "DP03_0106E": "With private health insurance"
+            },
+            "With public coverage": {
+              "DP03_0107E": "With public coverage"
+            }
+          },
+          "No health insurance coverage": {
+            "DP03_0108E": "No health insurance coverage"
+          }
+        },
+        "Unemployed:": {
+          "DP03_0109E": "Unemployed:",
+          "With health insurance coverage": {
+            "DP03_0110E": "With health insurance coverage",
+            "With private health insurance": {
+              "DP03_0111E": "With private health insurance"
+            },
+            "With public coverage": {
+              "DP03_0112E": "With public coverage"
+            }
+          },
+          "No health insurance coverage": {
+            "DP03_0113E": "No health insurance coverage"
+          }
+        }
+      },
+      "Not in labor force:": {
+        "DP03_0114E": "Not in labor force:",
+        "With health insurance coverage": {
+          "DP03_0115E": "With health insurance coverage",
+          "With private health insurance": {
+            "DP03_0116E": "With private health insurance"
+          },
+          "With public coverage": {
+            "DP03_0117E": "With public coverage"
+          }
+        },
+        "No health insurance coverage": {
+          "DP03_0118E": "No health insurance coverage"
+        }
+      }
+    },
+    "All families": {
+      "DP03_0119E": "All families",
+      "With related children of the householder under 18 years": {
+        "DP03_0120E": "With related children of the householder under 18 years",
+        "With related children of the householder under 5 years only": {
+          "DP03_0121E": "With related children of the householder under 5 years only"
+        }
+      },
+      "Married couple families": {
+        "DP03_0122E": "Married couple families",
+        "With related children of the householder under 18 years": {
+          "DP03_0123E": "With related children of the householder under 18 years",
+          "With related children of the householder under 5 years only": {
+            "DP03_0124E": "With related children of the householder under 5 years only"
+          }
+        }
+      },
+      "Families with female householder, no spouse present": {
+        "DP03_0125E": "Families with female householder, no spouse present",
+        "With related children of the householder under 18 years": {
+          "DP03_0126E": "With related children of the householder under 18 years",
+          "With related children of the householder under 5 years only": {
+            "DP03_0127E": "With related children of the householder under 5 years only"
+          }
+        }
+      }
+    },
+    "All people": {
+      "DP03_0128E": "All people",
+      "Under 18 years": {
+        "DP03_0129E": "Under 18 years",
+        "Related children of the householder under 18 years": {
+          "DP03_0130E": "Related children of the householder under 18 years",
+          "Related children of the householder under 5 years": {
+            "DP03_0131E": "Related children of the householder under 5 years"
+          },
+          "Related children of the householder 5 to 17 years": {
+            "DP03_0132E": "Related children of the householder 5 to 17 years"
+          }
+        }
+      },
+      "18 years and over": {
+        "DP03_0133E": "18 years and over",
+        "18 to 64 years": {
+          "DP03_0134E": "18 to 64 years"
+        },
+        "65 years and over": {
+          "DP03_0135E": "65 years and over"
+        }
+      },
+      "People in families": {
+        "DP03_0136E": "People in families"
+      },
+      "Unrelated individuals 15 years and over": {
+        "DP03_0137E": "Unrelated individuals 15 years and over"
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@ import BarChart from '../components/BarChart';
 import AllCountyBarChart from '../components/AllCountyBarChart';
 import SelectedBarChart from '../components/SelectedBarChart';
 import ScatterPlot from '../components/ScatterPlot';
+import SocioeconomicScatterplot from '../components/SocioeconomicScatterplot';
 
 // Use utility function to load CSV data
 export default function HomePage() {
@@ -122,6 +123,12 @@ export default function HomePage() {
         onCountyHover={setHoveredCounty}
         onCountyClick={handleCountyClick} // NEW
       />
+
+      <SocioeconomicScatterplot
+        hoveredCounty={hoveredCounty}
+        onCountyHover={setHoveredCounty}
+      />
+
     </div>
   );
 }
