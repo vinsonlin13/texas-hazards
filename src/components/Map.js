@@ -9,7 +9,7 @@ import * as d3 from 'd3';
 
 const geoUrl = '/data/counties-10m.json';
 
-const Map = ({ data, colorBy = 'RISK_SCORE', onCountyHover, hoveredCounty }) => {
+const Map = ({ data, colorBy = 'RISK_SCORE', onCountyHover, hoveredCounty, onCountyClick }) => {
   const [geographies, setGeographies] = useState([]);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [tooltipColor, setTooltipColor] = useState('rgba(0, 102, 204, 0.6)');
@@ -137,6 +137,7 @@ const Map = ({ data, colorBy = 'RISK_SCORE', onCountyHover, hoveredCounty }) => 
                           onCountyHover?.(null);
                         }}
                         onMouseMove={handleMouseMove}
+                        onClick={() => onCountyClick?.(countyName)}
                         style={{
                           default: { outline: 'none' },
                           hover: { fill: '#2a9df4', outline: 'none' },

@@ -17,7 +17,7 @@ ChartJS.register(
   LinearScale
 );
 
-const ScatterPlot = ({ data, colorBy, hoveredCounty, onCountyHover }) => {
+const ScatterPlot = ({ data, colorBy, hoveredCounty, onCountyHover, onCountyClick }) => {
   const filtered = data.filter(
     d => !isNaN(d.RISK_SCORE) && !isNaN(d.RESL_SCORE)
   );
@@ -32,16 +32,13 @@ const ScatterPlot = ({ data, colorBy, hoveredCounty, onCountyHover }) => {
           county: d.COUNTY
         })),
         backgroundColor: filtered.map(d =>
-            d.COUNTY?.toUpperCase() === hoveredCounty?.toUpperCase()
-            ? 'orange' : 'rgba(30, 144, 255, 0.6)'
+          d.COUNTY?.toUpperCase() === hoveredCounty?.toUpperCase() ? 'orange' : 'rgba(30, 144, 255, 0.6)'
         ),
         borderColor: filtered.map(d =>
-            d.COUNTY?.toUpperCase() === hoveredCounty?.toUpperCase()
-            ? 'orange' : 'rgba(30, 144, 255, 1)'
+          d.COUNTY?.toUpperCase() === hoveredCounty?.toUpperCase() ? 'orange' : 'rgba(30, 144, 255, 1)'
         ),
         pointRadius: filtered.map(d =>
-            d.COUNTY?.toUpperCase() === hoveredCounty?.toUpperCase()
-            ? 8 : 5
+          d.COUNTY?.toUpperCase() === hoveredCounty?.toUpperCase() ? 8 : 5
         ),
         hoverRadius: 8
       }
@@ -54,9 +51,15 @@ const ScatterPlot = ({ data, colorBy, hoveredCounty, onCountyHover }) => {
     onHover: (event, chartElement) => {
       if (chartElement.length > 0) {
         const county = chartElement[0].element.$context.raw.county;
-        onCountyHover?.(county);
+        onCountyHover?.(county.toUpperCase());
       } else {
         onCountyHover?.(null);
+      }
+    },
+    onClick: (event, chartElement) => {
+      if (chartElement.length > 0) {
+        const county = chartElement[0].element.$context.raw.county;
+        onCountyClick?.(county);
       }
     },
     plugins: {
@@ -72,34 +75,16 @@ const ScatterPlot = ({ data, colorBy, hoveredCounty, onCountyHover }) => {
           }
         }
       },
-      legend: {
-        display: false
-      },
+      legend: { display: false },
       title: {
         display: true,
         text: 'Risk vs. Resilience Score (Texas Counties)',
-        font: {
-          size: 18
-        }
+        font: { size: 18 }
       }
     },
     scales: {
-      x: {
-        title: {
-          display: true,
-          text: 'Resilience Score'
-        },
-        min: 0,
-        max: 100
-      },
-      y: {
-        title: {
-          display: true,
-          text: 'Risk Score'
-        },
-        min: 0,
-        max: 100
-      }
+      x: { title: { display: true, text: 'Resilience Score' }, min: 0, max: 100 },
+      y: { title: { display: true, text: 'Risk Score' }, min: 0, max: 100 }
     }
   };
 
