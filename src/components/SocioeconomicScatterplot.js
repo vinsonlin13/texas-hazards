@@ -26,8 +26,8 @@ export default function SocioeconomicScatterplot({ onCountyHover, hoveredCounty 
   useEffect(() => {
     async function fetchData() {
       const [mappingData, csvData] = await Promise.all([
-        d3.json('/Data/socioecon_metadata.json'),
-        d3.csv('/Data/texas_socioecon_data.csv')
+        d3.json('/data/socioecon_metadata.json'),
+        d3.csv('/data/texas_socioecon_data.csv')
       ]);
 
       const flat = flattenMapping(mappingData);
