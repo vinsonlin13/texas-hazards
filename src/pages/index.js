@@ -1,4 +1,6 @@
-// Project: Texas County Risk Assessment
+// pages/index.js
+
+
 import { useEffect, useState } from 'react';
 import { loadCSV } from '../utils/parseCSV';
 import Map from '../components/Map';
@@ -8,22 +10,21 @@ import SelectedBarChart from '../components/SelectedBarChart';
 import ScatterPlot from '../components/ScatterPlot';
 import SocioeconomicScatterplot from '../components/SocioeconomicScatterplot';
 
-// Use utility function to load CSV data
+
 export default function HomePage() {
-  // State variables
   const [data, setData] = useState([]);
   const [hoveredCounty, setHoveredCounty] = useState(null);
-  const [clickedCounty, setClickedCounty] = useState(null); // NEW
+  const [clickedCounty, setClickedCounty] = useState(null);
   const [selectedCounties, setSelectedCounties] = useState([]);
   const [colorBy, setColorBy] = useState('RISK_SCORE');
   const [viewMode, setViewMode] = useState('all');
 
-  // Load CSV data on component mount
+
   useEffect(() => {
     loadCSV().then(setData).catch(console.error);
   }, []);
 
-  // Handle county click for SelectedBarChart
+
   const handleCountyClick = (countyName) => {
     const upper = countyName?.toUpperCase();
     if (!upper) return;
@@ -34,11 +35,12 @@ export default function HomePage() {
         return updated.slice(0, 15);
       });
     }
-  };  
+  };
+
 
   if (data.length === 0) return <div>Loading...</div>;
 
-  // Filter data based on selected counties
+
   return (
     <div>
       <div style={{
@@ -50,6 +52,8 @@ export default function HomePage() {
         marginBottom: '30px'
       }}>
         <h1>Texas County Risk Assessment</h1>
+
+
         <label style={{ fontSize: '18px', marginRight: '10px' }}>
           Color map by:&nbsp;
           <select
@@ -62,6 +66,7 @@ export default function HomePage() {
           </select>
         </label>
 
+
         <label style={{ fontSize: '18px', marginLeft: '30px' }}>
           View mode:&nbsp;
           <select
@@ -72,63 +77,90 @@ export default function HomePage() {
             <option value="all">All Counties</option>
             <option value="top10">Top 10</option>
             <option value="interactive">Interactive</option>
+            <option value="socioeconomic">Socioeconomic Scatterplots</option>
           </select>
         </label>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'flex-start', marginTop: '20px' }}>
-        <Map
-          data={data}
-          colorBy={colorBy}
-          hoveredCounty={hoveredCounty}
-          onCountyHover={setHoveredCounty}
-          onCountyClick={handleCountyClick}
-          viewMode={viewMode}
-        />
 
-        {viewMode === 'interactive' && (
-          <SelectedBarChart
+      {viewMode === 'socioeconomic' ? (
+        <div style={{ marginTop: '20px' }}>
+          {/* Map centered at top */}
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Map
+              data={data}
+              colorBy={colorBy}
+              hoveredCounty={hoveredCounty}
+              onCountyHover={setHoveredCounty}
+              onCountyClick={handleCountyClick}
+              viewMode={viewMode}
+            />
+          </div>
+
+
+          {/* Scatterplot below the map */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px' }}>
+            <SocioeconomicScatterplot
+              hoveredCounty={hoveredCounty}
+              onCountyHover={setHoveredCounty}
+            />
+          </div>
+        </div>
+      ) : (
+        <>
+          <div style={{ display: 'flex', alignItems: 'flex-start', marginTop: '20px' }}>
+            <Map
+              data={data}
+              colorBy={colorBy}
+              hoveredCounty={hoveredCounty}
+              onCountyHover={setHoveredCounty}
+              onCountyClick={handleCountyClick}
+              viewMode={viewMode}
+            />
+
+
+            {viewMode === 'interactive' && (
+              <SelectedBarChart
+                data={data}
+                selected={selectedCounties}
+                colorBy={colorBy}
+                setSelected={setSelectedCounties}
+                hoveredCounty={hoveredCounty}
+                clickedCounty={clickedCounty}
+                onCountyHover={setHoveredCounty}
+              />
+            )}
+          </div>
+
+
+          {viewMode === 'top10' && (
+            <BarChart
+              data={data}
+              colorBy={colorBy}
+              hoveredCounty={hoveredCounty}
+              onCountyHover={setHoveredCounty}
+            />
+          )}
+
+
+          {viewMode === 'all' && (
+            <AllCountyBarChart
+              data={data}
+              hoveredCounty={hoveredCounty}
+              onCountyHover={setHoveredCounty}
+            />
+          )}
+
+
+          <ScatterPlot
             data={data}
-            selected={selectedCounties}
             colorBy={colorBy}
-            setSelected={setSelectedCounties}
             hoveredCounty={hoveredCounty}
-            clickedCounty={clickedCounty} // NEW
             onCountyHover={setHoveredCounty}
+            onCountyClick={handleCountyClick}
           />
-        )}
-      </div>
-
-      {viewMode === 'top10' && (
-        <BarChart
-          data={data}
-          colorBy={colorBy}
-          hoveredCounty={hoveredCounty}
-          onCountyHover={setHoveredCounty}
-        />
+        </>
       )}
-
-      {viewMode === 'all' && (
-        <AllCountyBarChart
-          data={data}
-          hoveredCounty={hoveredCounty}
-          onCountyHover={setHoveredCounty}
-        />
-      )}
-
-      <ScatterPlot
-        data={data}
-        colorBy={colorBy}
-        hoveredCounty={hoveredCounty}
-        onCountyHover={setHoveredCounty}
-        onCountyClick={handleCountyClick} // NEW
-      />
-
-      <SocioeconomicScatterplot
-        hoveredCounty={hoveredCounty}
-        onCountyHover={setHoveredCounty}
-      />
-
     </div>
   );
 }
