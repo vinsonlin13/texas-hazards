@@ -70,11 +70,23 @@ export default function SocioeconomicScatterplot({ onCountyHover, hoveredCounty 
       .domain(d3.extent(data, d => +d['Risk_Score'])).nice()
       .range([plotHeight, 0]);
 
+    const xAxis = d3.axisBottom(x).tickSize(-plotHeight).tickPadding(8);
+    const yAxis = d3.axisLeft(y).tickSize(-plotWidth).tickPadding(8);
+
     plotGroup.append('g')
       .attr('transform', `translate(0,${plotHeight})`)
-      .call(d3.axisBottom(x));
+      .call(xAxis)
+      .selectAll('text')
+      .style('fill', '#888');
+    plotGroup.select('g:last-of-type path').style('stroke', '#ccc');
+    plotGroup.selectAll('g:last-of-type line').style('stroke', '#ccc');
 
-    plotGroup.append('g').call(d3.axisLeft(y));
+    plotGroup.append('g')
+      .call(yAxis)
+      .selectAll('text')
+      .style('fill', '#888');
+    plotGroup.select('g:nth-of-type(2) path').style('stroke', '#ccc');
+    plotGroup.selectAll('g:nth-of-type(2) line').style('stroke', '#ccc');
 
     if (!tooltipRef.current) {
       tooltipRef.current = d3.select('body')
@@ -123,6 +135,7 @@ export default function SocioeconomicScatterplot({ onCountyHover, hoveredCounty 
       .attr('y', plotHeight + 40)
       .attr('text-anchor', 'middle')
       .style('font-size', '12px')
+      .style('fill', '#888')
       .text(flatMapping[xVar]?.label || xVar);
 
     plotGroup.append('text')
@@ -131,12 +144,11 @@ export default function SocioeconomicScatterplot({ onCountyHover, hoveredCounty 
       .attr('y', -45)
       .attr('text-anchor', 'middle')
       .style('font-size', '12px')
-      .text('Risk Score')
+      .style('fill', '#888')
+      .text('Risk Score');
 
     return () => {
-      if (tooltip) {
-        tooltip.style('opacity', 0);
-      }
+      if (tooltip) tooltip.style('opacity', 0);
     };
   }, [data, xVar, flatMapping, hoveredCounty, onCountyHover]);
 
@@ -146,7 +158,7 @@ export default function SocioeconomicScatterplot({ onCountyHover, hoveredCounty 
 
   return (
     <div className="graph-box" style={{ width: '100%', maxWidth: '500px', margin: 'auto' }}>
-      <h2 className="graph-title">Socioeconomic Risk Scatterplot</h2>
+      <h2 className="graph-title">Texas Counties Socioeconomic Risk Scatterplot</h2>
       <div style={{ marginBottom: '0.75rem' }}>
         <label style={{ marginRight: '0.5rem', fontSize: '0.9rem' }}>X-axis:</label>
         <select
@@ -167,7 +179,6 @@ export default function SocioeconomicScatterplot({ onCountyHover, hoveredCounty 
           ))}
         </select>
       </div>
-
       <svg ref={svgRef} width={450} height={350}></svg>
     </div>
   );

@@ -102,7 +102,6 @@ const ScatterPlot = ({ data, colorBy, hoveredCounty, onCountyHover, onCountyClic
 
   return (
     <div className="graph-box" style={{ width: '100%', maxWidth: '900px', margin: 'auto' }}>
-    {/* <div> */}
       <h2 className="graph-title">Texas Counties Risk vs. Resilience Scatterplot</h2>
       <div style={{ width: '100%', height: '500px' }}>
         <Scatter data={chartData} options={options} />
