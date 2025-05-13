@@ -17,10 +17,8 @@ const AllCountyBarChart = ({ data, hoveredCounty, onCountyHover }) => {
     .sort((a, b) => a.RISK_SCORE - b.RISK_SCORE);
 
   return (
-    <div style={{ marginTop: '40px', marginBottom: '40px' }}>
-      <h2 style={{ textAlign: 'center', fontWeight: 'bold', textDecoration: 'underline' }}>
-        All Texas Counties Sorted by Risk Score (Ascending) Bar Chart
-      </h2>
+    <div className="graph-box">
+      <h2 className="graph-title">All Texas Counties Sorted by Risk Score (Ascending)</h2>
       <ResponsiveContainer width="100%" height={600}>
         <BarChart
           data={sorted}
@@ -28,11 +26,7 @@ const AllCountyBarChart = ({ data, hoveredCounty, onCountyHover }) => {
           onMouseLeave={() => onCountyHover?.(null)}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis
-            dataKey="COUNTY"
-            tick={false}
-            axisLine={false}
-          >
+          <XAxis dataKey="COUNTY" tick={false} axisLine={false}>
             <Label value="Counties" offset={-5} position="insideBottom" />
           </XAxis>
           <YAxis domain={[0, 100]}>

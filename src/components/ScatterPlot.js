@@ -9,7 +9,7 @@ import {
   LinearScale
 } from 'chart.js';
 
-// Register the necessary components
+// Register Chart.js components
 ChartJS.register(
   Tooltip,
   Title,
@@ -18,13 +18,11 @@ ChartJS.register(
   LinearScale
 );
 
-// Define the ScatterPlot component
 const ScatterPlot = ({ data, colorBy, hoveredCounty, onCountyHover, onCountyClick }) => {
   const filtered = data.filter(
     d => !isNaN(d.RISK_SCORE) && !isNaN(d.RESL_SCORE)
   );
 
-  // Sort the data by RISK_SCORE and RESL_SCORE
   const chartData = {
     datasets: [
       {
@@ -48,7 +46,6 @@ const ScatterPlot = ({ data, colorBy, hoveredCounty, onCountyHover, onCountyClic
     ]
   };
 
-  // Define the chart options
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -79,32 +76,36 @@ const ScatterPlot = ({ data, colorBy, hoveredCounty, onCountyHover, onCountyClic
           }
         }
       },
-      legend: { display: false },
-      title: {
-        display: true,
-        text: 'Texas Counties Risk vs. Resilience Score Scatter Plot',
-        font: { size: 24, weight: 'bold' },
-      }
+      legend: { display: false }
     },
     scales: {
-      x: { title: { display: true, text: 'Resilience Score' }, min: 0, max: 100 },
-      y: { title: { display: true, text: 'Risk Score' }, min: 0, max: 100 }
+      x: {
+        title: {
+          display: true,
+          text: 'Resilience Score',
+          font: { size: 14 }
+        },
+        min: 0,
+        max: 100
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Risk Score',
+          font: { size: 14 }
+        },
+        min: 0,
+        max: 100
+      }
     }
   };
 
-  // Render the scatter plot
   return (
-    <div style={{
-      width: '100%',
-      maxWidth: '900px',
-      height: '500px',
-      margin: '40px auto',
-      backgroundColor: '#f8f8f8',
-      padding: '20px',
-      borderRadius: '10px',
-      boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
-    }}>
-      <Scatter data={chartData} options={options} />
+    <div className="graph-box" style={{ width: '100%', maxWidth: '900px', margin: 'auto' }}>
+      <h2 className="graph-title">Texas Counties Risk vs. Resilience Scatterplot</h2>
+      <div style={{ width: '100%', height: '500px' }}>
+        <Scatter data={chartData} options={options} />
+      </div>
     </div>
   );
 };
