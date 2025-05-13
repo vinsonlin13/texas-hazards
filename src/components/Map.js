@@ -120,11 +120,11 @@ const Map = ({ data, colorBy = 'RISK_SCORE', onCountyHover, hoveredCounty, onCou
                     }}
                     onMouseMove={handleMouseMove}
                     onClick={() => onCountyClick?.(countyName)}
-                    style={{
-                      default: { outline: 'none' },
-                      hover: { fill: '#2a9df4', outline: 'none' },
-                      pressed: { outline: 'none' }
-                    }}
+                    // style={{
+                    //   default: { outline: 'none' },
+                    //   hover: { fill: '#2a9df4', outline: 'none' },
+                    //   pressed: { outline: 'none' }
+                    // }}
                   />
                 );
               })

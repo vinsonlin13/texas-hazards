@@ -22,7 +22,7 @@ const AllCountyBarChart = ({ data, hoveredCounty, onCountyHover }) => {
       <ResponsiveContainer width="100%" height={600}>
         <BarChart
           data={sorted}
-          margin={{ top: 20, right: 30, left: 30, bottom: 50 }}
+          // margin={{ top: 20, right: 30, left: 30, bottom: 50 }}
           onMouseLeave={() => onCountyHover?.(null)}
         >
           <CartesianGrid strokeDasharray="3 3" />

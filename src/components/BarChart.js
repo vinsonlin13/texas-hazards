@@ -56,7 +56,7 @@ const RiskBarChart = ({ data, hoveredCounty, onCountyHover }) => {
   );
 
   const renderBar = (dataset, title, color) => (
-    <div className="graph-box" style={{ width: '48%' }}>
+    <div style={{ width: '100%' }}>
       <h2 className="graph-title">{title}</h2>
       <ResponsiveContainer width="100%" height={500}>
         <BarChart
@@ -104,8 +104,13 @@ const RiskBarChart = ({ data, hoveredCounty, onCountyHover }) => {
 
   return (
     <div className="graph-container">
-      {renderBar(sortedHigh, 'Top 10 Riskiest Counties', '#3b82f6')}
-      {renderBar(sortedLow, 'Top 10 Least Risky Counties', '#f97316')}
+      <div className="graph-box" style={{ flex: 1, minWidth: '400px', maxWidth: '600px' }}>
+        {renderBar(sortedHigh, 'Top 10 Riskiest Counties', '#3b82f6')}
+      </div>
+      <div className="graph-box" style={{ flex: 1, minWidth: '400px', maxWidth: '600px' }}>
+        {/* {renderBar(sortedLow, 'Top 10 Least Risky Counties', '#f97316')} */}
+        {renderBar(sortedLow, 'Top 10 Least Risky Counties', '#3b82f6')}
+      </div>
     </div>
   );
 };

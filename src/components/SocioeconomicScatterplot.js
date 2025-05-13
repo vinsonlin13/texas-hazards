@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from 'react';
 import * as d3 from 'd3';
 
-export default function SocioeconomicScatterplot({ onCountyHover, hoveredCounty, onCountyClick }) {
+export default function SocioeconomicScatterplot({ onCountyHover, hoveredCounty }) {
   const [data, setData] = useState([]);
   const [flatMapping, setFlatMapping] = useState({});
   const [xVar, setXVar] = useState('');
@@ -113,9 +113,6 @@ export default function SocioeconomicScatterplot({ onCountyHover, hoveredCounty,
           .style('top', (event.pageY - 28) + 'px');
         onCountyHover?.(d.County_Name);
       })
-      .on('click', (_, d) => {
-        onCountyClick?.(d.County_Name);
-      })
       .on('mouseout', () => {
         tooltip.style('opacity', 0);
         onCountyHover?.(null);
@@ -134,7 +131,13 @@ export default function SocioeconomicScatterplot({ onCountyHover, hoveredCounty,
       .attr('y', -45)
       .attr('text-anchor', 'middle')
       .style('font-size', '12px')
-      .text('Risk Score');
+      .text('Risk Score')
+
+    return () => {
+      if (tooltip) {
+        tooltip.style('opacity', 0);
+      }
+    };
   }, [data, xVar, flatMapping, hoveredCounty, onCountyHover]);
 
   if (!Object.keys(flatMapping).length || !data.columns) return <div>Loading...</div>;

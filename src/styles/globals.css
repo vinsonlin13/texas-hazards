@@ -80,7 +80,8 @@ a {
 .graph-box {
   border: 1px solid #d0d7e2;
   border-radius: 8px;
-  background-color: #f9fbff;
+  /* background-color: #f9fbff; */
+  background-color: #ffffff;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
